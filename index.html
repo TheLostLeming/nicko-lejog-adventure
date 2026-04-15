@@ -9,7 +9,9 @@
         :root {
             --alz-blue: #002d72;
             --alz-cyan: #00b1c1;
+            --victory-gold: #f2a900;
         }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         .hero-gradient {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('IMG_5491.jpg');
             background-size: cover;
@@ -23,11 +25,13 @@
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
+            color: #333;
         }
         .uk-section-secondary { background: var(--alz-blue); }
-        .uk-card-secondary { background: #001a44; border: 1px solid var(--alz-cyan); }
-        .uk-label-warning { background: #f2a900; color: #000; font-weight: bold; }
-        .img-caption { font-size: 0.85rem; color: #666; margin-top: 5px; font-style: italic; }
+        .uk-card-secondary { background: #001a44; border: 2px solid var(--alz-cyan); }
+        .img-caption { font-size: 0.85rem; color: #666; margin-top: 8px; font-style: italic; }
+        .uk-label-gold { background: var(--victory-gold); color: #000; font-weight: bold; }
+        .sticky-nav { background: rgba(255,255,255,0.9); border-bottom: 1px solid #ddd; }
     </style>
 </head>
 <body>
@@ -36,7 +40,7 @@
         <div class="uk-text-center uk-padding">
             <h1 class="uk-heading-medium uk-margin-small-bottom">LAND’S END TO JOHN O’GROATS</h1>
             <p class="uk-text-lead">A Solo & Unsupported Journey by Nick O’Connell</p>
-            <div class="uk-label uk-label-warning uk-text-uppercase uk-padding-small">In Support of the Alzheimer’s Society</div>
+            <div class="uk-label uk-label-gold uk-text-uppercase uk-padding-small">1,024 Miles Completed for the Alzheimer’s Society</div>
             <div class="uk-margin-medium-top">
                 <a href="#story" uk-scroll class="uk-button uk-button-default uk-button-large">View the Journey</a>
             </div>
@@ -46,8 +50,8 @@
     <div id="story" class="uk-section uk-section-muted">
         <div class="uk-container uk-container-small uk-text-center">
             <h2 class="chapter-heading">THE STORY</h2>
-            <p class="uk-text-large">In April 2026, Nick O’Connell set out from the southwestern tip of England to tackle the legendary "End to End." Riding solo and unsupported, he carried everything he needed to cover 1,000 miles and 14,000 meters of climbing.</p>
-            <p>Inspired by the memory of two family members lost to dementia, Nick rode to raise funds for the Alzheimer’s Society. Every pedal stroke was a tribute; every mile was a step toward a cure.</p>
+            <p class="uk-text-large">In April 2026, Nick O’Connell set out from the southwestern tip of England to tackle the legendary "End to End." Riding solo and unsupported, he covered 1,024 miles and over 14,000 meters of climbing.</p>
+            <p>Inspired by the memory of two family members lost to dementia, Nick rode to raise funds for the <strong>Alzheimer’s Society</strong>. Every pedal stroke was a tribute; every mile was a step toward a cure.</p>
         </div>
     </div>
 
@@ -99,7 +103,7 @@
             </div>
             <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-small" uk-grid uk-lightbox>
                 <div><img src="IMG_5591.jpg" alt="Liverpool"><p class="img-caption">The Liverpool Skyline</p></div>
-                <div><img src="IMG_5584.jpg" alt="Halfway"><p class="img-caption">1,000 Miles is feeling real</p></div>
+                <div><img src="IMG_5584.jpg" alt="Halfway"><p class="img-caption">Halfway point reached</p></div>
                 <div><img src="IMG_5602.jpg" alt="The Struggle"><p class="img-caption">The base of 'The Struggle'</p></div>
                 <div><img src="IMG_5631.jpg" alt="Scotland"><p class="img-caption">Crossing into Scotland</p></div>
                 <div><img src="IMG_5656.jpg" alt="Kelpies"><p class="img-caption">The Kelpies, Falkirk</p></div>
@@ -112,7 +116,7 @@
         <div class="uk-container">
             <div uk-grid class="uk-flex-middle">
                 <div class="uk-width-1-2@m">
-                    <h3 class="chapter-heading">LEG 5: THE HIGHLAND GAUNTLET</h3>
+                    <h3 class="chapter-heading" style="color: white; border-color: white;">LEG 5: THE HIGHLAND GAUNTLET</h3>
                     <p>The penultimate leg brought snow-capped peaks and freezing rain. Despite a nasty encounter with a 2-inch nail puncture, the warmth of the Highland hospitality kept the wheels turning toward Inverness.</p>
                 </div>
                 <div class="uk-width-1-2@m">
@@ -127,16 +131,26 @@
         </div>
     </div>
 
-    <div class="uk-section uk-section-primary uk-light">
+    <div id="finish" class="uk-section uk-section-primary uk-light" style="background: #008291;">
         <div class="uk-container uk-text-center">
-            <h2 class="uk-heading-small">THE FINALE: JOHN O’GROATS</h2>
-            <p class="uk-text-large">On April 13th, Nick rolled into John o' Groats. After 1,000 miles of solo, unsupported riding, the journey was complete.</p>
-            <div class="uk-card uk-card-body uk-card-secondary uk-display-inline-block uk-margin-medium-top">
-                <h3 class="uk-margin-remove">TOTAL RAISED</h3>
-                <p class="uk-heading-medium uk-margin-remove">£1,000+</p>
+            <h2 class="uk-heading-small">MISSION ACCOMPLISHED!</h2>
+            <div class="uk-margin-medium-bottom">
+                <img src="IMG_5712.jpg" alt="The Finish Line" class="uk-border-rounded uk-box-shadow-large" style="max-width: 600px; border: 5px solid white;">
             </div>
+            
+            <div class="uk-container uk-container-small">
+                <p class="uk-text-large">"11 days, 1,024 miles, and 14,200m of climbing later... I’ve finally made it to John O’Groats!"</p>
+                <p>The final 190km push from Inverness was a battle against the rain and tired legs, but seeing that iconic signpost made every mile worth it. We exceeded the target for the Alzheimer’s Society together. Time for a celebratory pint!</p>
+            </div>
+
+            <div class="uk-card uk-card-body uk-card-secondary uk-display-inline-block uk-margin-medium-top">
+                <h3 class="uk-margin-remove" style="color: var(--alz-cyan);">FINAL TOTAL RAISED</h3>
+                <p class="uk-heading-medium uk-margin-remove">£1,210</p>
+                <div class="uk-label uk-label-gold">121% OF TARGET</div>
+            </div>
+            
             <div class="uk-margin-large-top">
-                <a href="https://www.justgiving.com/fundraising/iamorganisingmyowncycle2025-nickoconnell" target="_blank" class="uk-button uk-button-default uk-button-large">Donate & Support</a>
+                <a href="https://www.justgiving.com/fundraising/iamorganisingmyowncycle2025-nickoconnell" target="_blank" class="uk-button uk-button-default uk-button-large">Visit JustGiving Page</a>
             </div>
         </div>
     </div>
