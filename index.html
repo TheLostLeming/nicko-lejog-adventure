@@ -32,10 +32,7 @@
         .uk-section-muted { background: #f9f9f9; }
         .img-caption { font-size: 0.85rem; color: #666; margin-top: 10px; margin-bottom: 20px; font-style: italic; text-align: center; }
         
-        /* CRITICAL FIX: Ensures animated elements stay visible after fading in */
-        .uk-scrollspy-inview {
-            opacity: 1 !important;
-        }
+        .uk-scrollspy-inview { opacity: 1 !important; }
     </style>
 </head>
 <body>
@@ -131,17 +128,33 @@
 
     <div class="uk-section uk-section-default">
         <div class="uk-container uk-container-small">
+            <div uk-scrollspy="cls: uk-animation-slide-left-small; delay: 200; repeat: false">
+                <h3 class="chapter-heading">DAY 11: THE FINAL PUSH</h3>
+                <p><strong>Inverness to John O'Groats:</strong> LEJOG complete. Thank you James Shewan for joining the first hour. Certainly some great scenery along the coastal road and made even better with some glorious sunshine. In the end I completed 225km which included getting to my hotel.</p>
+            </div>
+            <div class="uk-child-width-1-2@s uk-grid-medium uk-margin-large-top" uk-grid uk-lightbox uk-scrollspy="cls: uk-animation-fade; target: > div; delay: 300; repeat: false">
+                <div><a href="IMG_5701.jpg" data-caption="Morning miles with James Shewan."><img src="IMG_5701.jpg" class="gallery-img"></a><p class="img-caption">Morning miles with James Shewan.</p></div>
+                <div><a href="IMG_5709.jpg" data-caption="The open coastal road to the north."><img src="IMG_5709.jpg" class="gallery-img"></a><p class="img-caption">Scenery along the coastal road.</p></div>
+                <div><a href="IMG_5707.jpg" data-caption="Glorious sunshine on the final stretch."><img src="IMG_5707.jpg" class="gallery-img"></a><p class="img-caption">Sunshine and stone walls.</p></div>
+                <div><a href="IMG_5702.jpg" data-caption="The Breakfast of Champions."><img src="IMG_5702.jpg" class="gallery-img"></a><p class="img-caption">The Breakfast of Champions.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container uk-container-small">
             <h3 class="chapter-heading">Fuel & Friends</h3>
             <div class="uk-child-width-1-4@m uk-child-width-1-2@s uk-grid-small" uk-grid uk-lightbox uk-scrollspy="cls: uk-animation-fade; target: > a; delay: 100; repeat: false">
                 <a href="IMG_5515.jpg"><img src="IMG_5515.jpg" class="gallery-img" style="height:150px"></a>
                 <a href="IMG_5535.jpg"><img src="IMG_5535.jpg" class="gallery-img" style="height:150px"></a>
                 <a href="IMG_5555.jpg"><img src="IMG_5555.jpg" class="gallery-img" style="height:150px"></a>
-                <a href="IMG_5593.jpg"><img src="IMG_5593.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5718.jpg"><img src="IMG_5718.jpg" class="gallery-img" style="height:150px"></a>
                 <a href="IMG_5566.jpg"><img src="IMG_5566.jpg" class="gallery-img" style="height:150px"></a>
                 <a href="IMG_5567.jpg"><img src="IMG_5567.jpg" class="gallery-img" style="height:150px"></a>
                 <a href="IMG_5536.jpg"><img src="IMG_5536.jpg" class="gallery-img" style="height:150px"></a>
                 <a href="IMG_5613.jpg"><img src="IMG_5613.jpg" class="gallery-img" style="height:150px"></a>
             </div>
+            <p class="img-caption uk-margin-top">A hard-earned Balvenie to mark the end of the road.</p>
         </div>
     </div>
 
