@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/css/uikit.min.css" />
     <style>
         :root { --alz-blue: #002d72; --alz-cyan: #00b1c1; --victory-gold: #f2a900; }
-        body { font-family: -apple-system, sans-serif; color: #333; line-height: 1.6; background-color: #fff; overflow-x: hidden; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
         
-        /* Fixed Hero Height with Parallax and Signpost Focus */
+        /* Hero Section - Fixed to show full signpost */
         .hero-section {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG_5491.jpg');
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('IMG_5491.jpg');
             background-size: cover;
-            background-position: center top; /* Keeps the signpost in view */
+            background-position: center 20%; /* Adjusted to keep head/signpost in view */
             background-attachment: fixed;
         }
 
-        .chapter-heading { border-bottom: 3px solid var(--alz-cyan); display: inline-block; padding-bottom: 5px; text-transform: uppercase; font-weight: bold; margin-bottom: 20px; }
+        .chapter-heading { border-bottom: 3px solid var(--alz-cyan); display: inline-block; padding-bottom: 5px; text-transform: uppercase; font-weight: bold; margin-bottom: 20px; color: #111; }
         
-        /* Preventing "Squishing" */
+        /* Prevent Squishing while maintaining aspect ratio */
         .gallery-img { 
             width: 100%; 
-            height: 250px; /* Uniform height */
-            object-fit: cover; /* Crops instead of stretching */
-            border-radius: 4px; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
-        .gallery-img:hover { transform: scale(1.02); }
+        .gallery-img:hover { transform: scale(1.03); }
 
-        .uk-section-muted { background: #f8f9fa; }
-        .img-caption { font-size: 0.8rem; color: #666; margin-bottom: 15px; font-style: italic; text-align: center; }
+        .uk-section-muted { background: #f9f9f9; }
+        .img-caption { font-size: 0.85rem; color: #666; margin-top: 10px; margin-bottom: 20px; font-style: italic; text-align: center; }
+        
+        /* Smooth Fade In */
+        [uk-scrollspy] { opacity: 0; }
     </style>
 </head>
 <body>
 
-    <div class="hero-section uk-flex uk-flex-center uk-flex-middle uk-light" uk-parallax="opacity: 1,0; viewport: 0.5">
-        <div class="uk-text-center uk-padding" uk-scrollspy="cls: uk-animation-slide-bottom-medium; delay: 300">
-            <h1 class="uk-heading-medium">LAND’S END TO JOHN O’GROATS 2026</h1>
-            <p class="uk-text-lead">A Solo & Unsupported Journey by Nick O’Connell</p>
-            <p class="uk-text-meta">In Memory of Family and In Support of the Alzheimer’s Society</p>
+    <div class="hero-section uk-flex uk-flex-center uk-flex-middle uk-light">
+        <div class="uk-text-center uk-padding" uk-scrollspy="cls: uk-animation-slide-bottom-medium; delay: 300; repeat: true">
+            <h1 class="uk-heading-medium uk-text-bold">LAND’S END TO JOHN O’GROATS 2026</h1>
+            <p class="uk-text-lead uk-visible@s">A Solo & Unsupported Journey by Nick O’Connell</p>
+            <div class="uk-label uk-label-warning uk-padding-small uk-text-bold">In Support of the Alzheimer’s Society</div>
         </div>
     </div>
 
@@ -48,89 +52,113 @@
         <div class="uk-container uk-container-small uk-text-center" uk-scrollspy="cls: uk-animation-fade; delay: 300">
             <h2 class="chapter-heading">THE STORY</h2>
             <p class="uk-text-large">In April 2026, Nick O’Connell set out from the southwestern tip of England to tackle the legendary "End to End." Riding solo and unsupported, he carried everything he needed to cover 1,000 miles and 14,000 meters of climbing.</p>
+            <p class="uk-text-large">Inspired by the memory of two family members lost to dementia, Nick rode to raise funds for the Alzheimer’s Society. Every pedal stroke was a tribute; every mile was a step toward a cure.</p>
         </div>
     </div>
 
-    <div class="uk-section uk-section-muted" uk-scrollspy="cls: uk-animation-slide-left-small; delay: 200">
+    <div class="uk-section uk-section-muted">
         <div class="uk-container uk-container-small">
-            <h3 class="chapter-heading">LEG 1: THE CORNISH START</h3>
-            <p><strong>Land’s End to Plymouth:</strong> The journey began with the "Cornish Rollers"—relentless, short, sharp climbs that tested the legs immediately. Nick fueled up on local pasties and cake, navigating the mist and the rugged Atlantic coastline.</p>
-            <div class="uk-child-width-1-2@s uk-grid-small uk-margin-top" uk-grid uk-lightbox="animation: slide">
-                <div><a href="IMG_5491.jpg"><img src="IMG_5491.jpg" class="gallery-img"></a><p class="img-caption">The iconic start at Land’s End.</p></div>
-                <div><a href="IMG_5498.jpg"><img src="IMG_5498.jpg" class="gallery-img"></a><p class="img-caption">Ruined tin mines in the Cornish mist.</p></div>
-                <div><a href="IMG_5514.jpg"><img src="IMG_5514.jpg" class="gallery-img"></a><p class="img-caption">The first of many Malcolm Barnecutt pasties.</p></div>
-                <div><a href="IMG_5519.jpg"><img src="IMG_5519.jpg" class="gallery-img"></a><p class="img-caption">Crossing the Tamar Bridge into Devon.</p></div>
+            <div uk-scrollspy="cls: uk-animation-slide-left-small; delay: 200">
+                <h3 class="chapter-heading">LEG 1: THE CORNISH START</h3>
+                <p><strong>Land’s End to Plymouth:</strong> The journey began with the "Cornish Rollers"—relentless, short, sharp climbs that tested the legs immediately. Nick fueled up on local pasties and cake, navigating the mist and the rugged Atlantic coastline.</p>
             </div>
-        </div>
-    </div>
-
-    <div class="uk-section uk-section-default" uk-scrollspy="cls: uk-animation-slide-right-small; delay: 200">
-        <div class="uk-container uk-container-small">
-            <h3 class="chapter-heading">LEG 2: MOORS & GORGES</h3>
-            <p><strong>The South West & The Midlands:</strong> Sunshine broke through as Nick crossed the wild expanse of Dartmoor and tackled the famous 20% gradients of Cheddar Gorge. This leg was defined by massive 100-mile days and a high-speed crossing into the heart of England.</p>
-            <div class="uk-child-width-1-2@s uk-grid-small uk-margin-top" uk-grid uk-lightbox>
-                <div><a href="IMG_5531.jpg"><img src="IMG_5531.jpg" class="gallery-img"></a><p class="img-caption">Resting the Ribble Ti on Dartmoor.</p></div>
-                <div><a href="IMG_5547.jpg"><img src="IMG_5547.jpg" class="gallery-img"></a><p class="img-caption">Cheddar Gorge: Harder in person than on Zwift!</p></div>
-                <div><a href="IMG_5554.jpg"><img src="IMG_5554.jpg" class="gallery-img"></a><p class="img-caption">The Clifton Suspension Bridge at Bristol.</p></div>
-                <div><a href="IMG_5569.jpg"><img src="IMG_5569.jpg" class="gallery-img"></a><p class="img-caption">Ironbridge: The birthplace of industry.</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="uk-section uk-section-muted" uk-scrollspy="cls: uk-animation-fade; delay: 200">
-        <div class="uk-container uk-container-small">
-            <h3 class="chapter-heading">LEG 3 & 4: NORTHWARD BOUND</h3>
-            <p>Nick hit the halfway point with a "Ferry Cross the Mersey" before tackling the Lake District and the 50mph descent into Scotland.</p>
-            <div class="uk-child-width-1-3@s uk-grid-small" uk-grid uk-lightbox>
-                <div><a href="IMG_5591.jpg"><img src="IMG_5591.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5584.jpg"><img src="IMG_5584.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5631.jpg"><img src="IMG_5631.jpg" class="gallery-img"></a></div>
+            <div class="uk-child-width-1-2@s uk-grid-medium uk-margin-large-top" uk-grid uk-lightbox="animation: slide">
+                <div><a href="IMG_5491.jpg" data-caption="The iconic start at Land’s End."><img src="IMG_5491.jpg" class="gallery-img"></a><p class="img-caption">The iconic start at Land’s End.</p></div>
+                <div><a href="IMG_5498.jpg" data-caption="Ruined tin mines in the Cornish mist."><img src="IMG_5498.jpg" class="gallery-img"></a><p class="img-caption">Ruined tin mines in the Cornish mist.</p></div>
+                <div><a href="IMG_5514.jpg" data-caption="The first of many Malcolm Barnecutt pasties."><img src="IMG_5514.jpg" class="gallery-img"></a><p class="img-caption">The first of many Malcolm Barnecutt pasties.</p></div>
+                <div><a href="IMG_5519.jpg" data-caption="Crossing the Tamar Bridge into Devon."><img src="IMG_5519.jpg" class="gallery-img"></a><p class="img-caption">Crossing the Tamar Bridge into Devon.</p></div>
             </div>
         </div>
     </div>
 
     <div class="uk-section uk-section-default">
         <div class="uk-container uk-container-small">
-            <h3 class="chapter-heading">THE FUEL</h3>
-            <p class="uk-margin-bottom">You can't ride 1,000 miles without some serious calories.</p>
-            <div class="uk-child-width-1-3@s uk-grid-small" uk-grid uk-lightbox>
-                <div><a href="IMG_5515.jpg"><img src="IMG_5515.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5535.jpg"><img src="IMG_5535.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5555.jpg"><img src="IMG_5555.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5593.jpg"><img src="IMG_5593.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5613.jpg"><img src="IMG_5613.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5696.jpg"><img src="IMG_5696.jpg" class="gallery-img"></a></div>
+            <div uk-scrollspy="cls: uk-animation-slide-right-small; delay: 200">
+                <h3 class="chapter-heading">LEG 2: MOORS & GORGES</h3>
+                <p><strong>The South West & The Midlands:</strong> Sunshine broke through as Nick crossed the wild expanse of Dartmoor and tackled the famous 20% gradients of Cheddar Gorge. This leg was defined by massive 100-mile days and a high-speed crossing into the heart of England.</p>
+            </div>
+            <div class="uk-child-width-1-2@s uk-grid-medium uk-margin-large-top" uk-grid uk-lightbox="animation: scale">
+                <div><a href="IMG_5531.jpg" data-caption="Resting the Ribble Ti on Dartmoor."><img src="IMG_5531.jpg" class="gallery-img"></a><p class="img-caption">Resting the Ribble Ti on Dartmoor.</p></div>
+                <div><a href="IMG_5547.jpg" data-caption="Cheddar Gorge: Harder in person than on Zwift!"><img src="IMG_5547.jpg" class="gallery-img"></a><p class="img-caption">Cheddar Gorge: Harder in person than on Zwift!</p></div>
+                <div><a href="IMG_5554.jpg" data-caption="The Clifton Suspension Bridge at Bristol."><img src="IMG_5554.jpg" class="gallery-img"></a><p class="img-caption">The Clifton Suspension Bridge at Bristol.</p></div>
+                <div><a href="IMG_5569.jpg" data-caption="Ironbridge: The birthplace of industry."><img src="IMG_5569.jpg" class="gallery-img"></a><p class="img-caption">Ironbridge: The birthplace of industry.</p></div>
             </div>
         </div>
     </div>
 
-    <div class="uk-section uk-section-muted" uk-scrollspy="cls: uk-animation-slide-bottom-small; delay: 200">
+    <div class="uk-section uk-section-muted">
         <div class="uk-container uk-container-small">
-            <h3 class="chapter-heading">LEG 5: THE HIGHLAND GAUNTLET</h3>
-            <p>Penultimate leg brought snow-capped peaks, freezing rain, and a nasty nail puncture. But the finish line was calling.</p>
-            <div class="uk-child-width-1-2@s uk-grid-small" uk-grid uk-lightbox>
-                <div><a href="IMG_5683.jpg"><img src="IMG_5683.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5693.jpg"><img src="IMG_5693.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5697.jpg"><img src="IMG_5697.jpg" class="gallery-img"></a></div>
-                <div><a href="IMG_5699.jpg"><img src="IMG_5699.jpg" class="gallery-img"></a></div>
+            <div uk-scrollspy="cls: uk-animation-slide-left-small; delay: 200">
+                <h3 class="chapter-heading">LEG 3: THE HALFWAY MARK</h3>
+                <p><strong>The Mersey to the Lakes:</strong> Nick hit the halfway point with a "Ferry Cross the Mersey" and a push through the flat plains of Cheshire. The scenery soon turned rugged again as the Lake District mountains appeared on the horizon.</p>
+            </div>
+            <div class="uk-child-width-1-3@s uk-grid-medium uk-margin-large-top" uk-grid uk-lightbox>
+                <div><a href="IMG_5591.jpg" data-caption="The Liverpool skyline from the water."><img src="IMG_5591.jpg" class="gallery-img"></a><p class="img-caption">The Liverpool skyline from the water.</p></div>
+                <div><a href="IMG_5584.jpg" data-caption="The halfway smile—1,000 miles is starting to feel real."><img src="IMG_5584.jpg" class="gallery-img"></a><p class="img-caption">The halfway smile—1,000 miles is starting to feel real.</p></div>
+                <div><a href="IMG_5602.jpg" data-caption="Ambleside: The start of 'The Struggle.'"><img src="IMG_5602.jpg" class="gallery-img"></a><p class="img-caption">Ambleside: The start of "The Struggle."</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-container-small">
+            <div uk-scrollspy="cls: uk-animation-slide-right-small; delay: 200">
+                <h3 class="chapter-heading">LEG 4: CROSSING THE BORDER</h3>
+                <p><strong>The Lake District to Falkirk:</strong> The 20% gradients of "The Struggle" led to a 50mph descent and a celebratory crossing into Scotland. Nick took a moment to appreciate the engineering of the Falkirk Wheel and the scale of the Kelpies.</p>
+            </div>
+            <div class="uk-child-width-1-3@s uk-grid-medium uk-margin-large-top" uk-grid uk-lightbox>
+                <div><a href="IMG_5631.jpg" data-caption="Scotland Welcomes You."><img src="IMG_5631.jpg" class="gallery-img"></a><p class="img-caption">Scotland Welcomes You.</p></div>
+                <div><a href="IMG_5656.jpg" data-caption="Standing with the Kelpies."><img src="IMG_5656.jpg" class="gallery-img"></a><p class="img-caption">Standing with the Kelpies.</p></div>
+                <div><a href="IMG_5642.jpg" data-caption="The atmospheric canal tunnels of Falkirk."><img src="IMG_5642.jpg" class="gallery-img"></a><p class="img-caption">The atmospheric canal tunnels of Falkirk.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container uk-container-small">
+            <div uk-scrollspy="cls: uk-animation-slide-bottom-small; delay: 200">
+                <h3 class="chapter-heading">LEG 5: THE HIGHLAND GAUNTLET</h3>
+                <p><strong>Falkirk to Inverness:</strong> The penultimate leg brought snow-capped peaks, freezing rain, and a nasty encounter with a 2-inch nail. Despite the puncture and the cold, the warmth of Highland hospitality and the support of fellow riders kept the wheels turning.</p>
+            </div>
+            <div class="uk-child-width-1-2@s uk-grid-medium uk-margin-large-top" uk-grid uk-lightbox>
+                <div><a href="IMG_5683.jpg" data-caption="The nail that nearly stopped the show."><img src="IMG_5683.jpg" class="gallery-img"></a><p class="img-caption">The nail that nearly stopped the show.</p></div>
+                <div><a href="IMG_5693.jpg" data-caption="Snow on the mountain passes."><img src="IMG_5693.jpg" class="gallery-img"></a><p class="img-caption">Snow on the mountain passes.</p></div>
+                <div><a href="IMG_5697.jpg" data-caption="Riding through the rain with Janine."><img src="IMG_5697.jpg" class="gallery-img"></a><p class="img-caption">Riding through the rain with Janine.</p></div>
+                <div><a href="IMG_5699.jpg" data-caption="The view toward the final 190km."><img src="IMG_5699.jpg" class="gallery-img"></a><p class="img-caption">The view toward the final 190km.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-container-small">
+            <h3 class="chapter-heading">Fuel & Friends</h3>
+            <div class="uk-child-width-1-4@m uk-child-width-1-2@s uk-grid-small" uk-grid uk-lightbox>
+                <a href="IMG_5515.jpg"><img src="IMG_5515.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5535.jpg"><img src="IMG_5535.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5555.jpg"><img src="IMG_5555.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5593.jpg"><img src="IMG_5593.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5566.jpg"><img src="IMG_5566.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5567.jpg"><img src="IMG_5567.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5536.jpg"><img src="IMG_5536.jpg" class="gallery-img" style="height:150px"></a>
+                <a href="IMG_5613.jpg"><img src="IMG_5613.jpg" class="gallery-img" style="height:150px"></a>
             </div>
         </div>
     </div>
 
     <div class="uk-section uk-section-secondary uk-light">
         <div class="uk-container uk-text-center">
-            <h2 class="uk-heading-small">THE FINALE: JOHN O’GROATS</h2>
-            <div class="uk-margin-medium-bottom" uk-scrollspy="cls: uk-animation-scale-up; delay: 300">
-                <a href="IMG_5714.jpg" uk-lightbox><img src="IMG_5714.jpg" style="max-width: 500px; border: 5px solid white; border-radius: 10px;"></a>
+            <h2 class="uk-heading-small" uk-scrollspy="cls: uk-animation-scale-up; delay: 200">THE FINALE: JOHN O’GROATS</h2>
+            <div class="uk-margin-large-bottom" uk-scrollspy="cls: uk-animation-fade; delay: 400">
+                <a href="IMG_5714.jpg" uk-lightbox><img src="IMG_5714.jpg" style="max-width: 100%; width: 500px; border: 5px solid white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5)"></a>
             </div>
-            <p class="uk-text-large">1,024 miles later, the journey was complete.</p>
-            <div class="uk-card uk-card-body uk-card-default uk-display-inline-block uk-margin-top" style="color: #333;">
+            <p class="uk-text-large">On April 13th, Nick rolled into John o' Groats. After 1,024 miles of solo, unsupported riding, the journey was complete.</p>
+            <div class="uk-card uk-card-body uk-card-default uk-display-inline-block uk-margin-large-top" style="color: #333; border-radius: 15px;">
                 <h3 class="uk-margin-remove">TOTAL RAISED</h3>
                 <p class="uk-heading-medium uk-margin-remove" style="color: var(--alz-blue);">£1,210</p>
                 <p class="uk-text-small">121% of target for the Alzheimer's Society</p>
             </div>
             <div class="uk-margin-large-top">
-                <a href="https://www.justgiving.com/fundraising/iamorganisingmyowncycle2025-nickoconnell" target="_blank" class="uk-button uk-button-primary uk-button-large">Donate & Celebrate</a>
+                <a href="https://www.justgiving.com/fundraising/iamorganisingmyowncycle2025-nickoconnell" target="_blank" class="uk-button uk-button-primary uk-button-large" style="border-radius: 50px;">Visit JustGiving Page</a>
             </div>
         </div>
     </div>
